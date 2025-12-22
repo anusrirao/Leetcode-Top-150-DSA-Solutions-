@@ -1,4 +1,20 @@
-
+/**
+ * LeetCode: Merge Sorted Array (Easy)
+ * Link: https:https://leetcode.com/studyplan/top-interview-150/
+ *
+ * Problem:
+ * Merge two sorted arrays nums1 and nums2 into nums1 (nums1 has enough space).
+ * Do not return anything, modify nums1 in-place.
+ *
+ * Approach:
+ * Use three pointers starting from the end (to avoid overwriting).
+ * Compare elements from nums1 and nums2, place larger one at the end of nums1.
+ *
+ * Time Complexity: O(m + n)
+ * Space Complexity: O(1)
+ *
+ * Learned: Working backwards avoids shifting elements.
+ */
 class Solution {
     public void merge(int[] nums1, int m, int[] nums2, int n) {
 
