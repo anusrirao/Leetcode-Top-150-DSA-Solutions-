@@ -1,3 +1,20 @@
+/**
+ * LeetCode: Remove Element (Easy)
+ * Link: https://leetcode.com/problems/remove-element/
+ *
+ * Problem:
+ * Remove all instances of val in nums in-place and return the number of elements left.
+ *
+ * Approach:
+ * Two pointers: one for iteration, one for valid position (k).
+ * If current element != val, place it at k and increment k.
+ *
+ * Time Complexity: O(n)
+ * Space Complexity: O(1)
+ *
+ * Learned: In-place modification with two pointers is efficient.
+ */
+
 class Solution {
     public int removeElement(int[] nums, int val) {
         int k = 0;
