@@ -1,0 +1,53 @@
+/**
+ * LeetCode 13: Roman to Integer (Easy)
+ * Link: https://leetcode.com/problems/roman-to-integer/
+ *
+ * Problem:
+ * Given a Roman numeral string s, convert it to an integer.
+ * Roman symbols: I=1, V=5, X=10, L=50, C=100, D=500, M=1000
+ * Subtractive notation: IV=4, IX=9, XL=40, XC=90, CD=400, CM=900
+ *
+ * Example:
+ * Input: s = "MCMXCIV"
+ * Output: 1994 (M=1000, CM=900, XC=90, IV=4)
+ *
+ * Approach:
+ * Use a HashMap for symbol values.
+ * Iterate from left to right.
+ * If current symbol value < next symbol value → subtract current (subtractive case).
+ * Else → add current.
+ * Add the last symbol separately.
+ *
+ * Time Complexity: O(n) — single pass through the string
+ * Space Complexity: O(1) — fixed map size
+ *
+ * Learned: Handle subtractive cases by comparing current and next values.
+ */
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class RomanToInteger {
+    public int romanToInt(String s) {
+        Map<Character, Integer> map = new HashMap<>();
+        map.put('I', 1);
+        map.put('V', 5);
+        map.put('X', 10);
+        map.put('L', 50);
+        map.put('C', 100);
+        map.put('D', 500);
+        map.put('M', 1000);
+
+        int result = 0;
+
+        for (int i = 0; i < s.length(); i++) {
+            if (i + 1 < s.length() && map.get(s.charAt(i)) < map.get(s.charAt(i + 1))) {
+                result -= map.get(s.charAt(i));
+            } else {
+                result += map.get(s.charAt(i));
+            }
+        }
+
+        return result;
+    }
+}
