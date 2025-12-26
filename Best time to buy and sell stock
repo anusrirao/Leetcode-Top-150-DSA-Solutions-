@@ -1,0 +1,40 @@
+/**
+ * LeetCode 121: Best Time to Buy and Sell Stock (Easy)
+ * Link: https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+ *
+ * Problem:
+ * You are given an array prices where prices[i] is the price of a stock on the i-th day.
+ * Find and return the maximum profit you can achieve by buying on one day and selling on a later day.
+ * If no profit possible, return 0.
+ *
+ * Example:
+ * Input: prices = [7,1,5,3,6,4]
+ * Output: 5 (buy on day 2 at 1, sell on day 5 at 6)
+ *
+ * Approach:
+ * One pass — keep track of minimum price seen so far.
+ * At each day, calculate profit if sold today (current - minPrice).
+ * Update maxProfit and minPrice as needed.
+ *
+ * Time Complexity: O(n)
+ * Space Complexity: O(1)
+ *
+ * Learned: Greedy pattern — track minimum and calculate profit on the fly.
+ */
+
+public class BestTimeToBuyAndSellStock {
+    public int maxProfit(int[] prices) {
+        int minPrice = Integer.MAX_VALUE;
+        int maxProfit = 0;
+
+        for (int price : prices) {
+            if (price < minPrice) {
+                minPrice = price;
+            } else if (price - minPrice > maxProfit) {
+                maxProfit = price - minPrice;
+            }
+        }
+
+        return maxProfit;
+    }
+}
