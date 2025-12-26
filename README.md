@@ -5,5 +5,7 @@ Java DSA solutions to Top interview 150
 - Remove Element ✓ (two pointers technique)
 - Remove Duplicates from Sorted Array ✓
 - Majority Element ✓ (Boyer-Moore Voting)
+- Best Time to Buy and Sell Stock ✓
+- Roman to Integer ✓ (subtractive notation with map)
 
 More coming daily 🚀
